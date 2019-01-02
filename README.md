@@ -1,4 +1,4 @@
-#Mid-Year Intro to Computer Science Project
+# Mid-Year Intro to Computer Science Project
 
 * Current Ideas to look forward too
   * **Quick-Dict**
