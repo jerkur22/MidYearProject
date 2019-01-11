@@ -71,6 +71,7 @@ function create ()
 
     // The player and its settings
     player = this.physics.add.sprite(100, 450, 'dude');
+    this.cameras.main.startFollow(player);
 
     //  Player physics properties. Give the little guy a slight bounce.
     player.setBounce(0.1);
@@ -103,7 +104,7 @@ function create ()
     //  Some stars to collect, 12 in total, evenly spaced 70 pixels apart along the x axis
     stars = this.physics.add.group({
         key: 'star',
-        repeat: 11,
+        repeat: 1,
         setXY: { x: 12, y: 0, stepX: 70 }
     });
 
