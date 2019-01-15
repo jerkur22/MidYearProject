@@ -51,6 +51,8 @@ function preload ()
     this.load.image('bomb', 'assets/bomb.png');
     this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
     this.load.image('stair','assets/stair.png');
+    this.load.image('grapefruit','assets/stair.png');
+    this.load.image('stair2','assets/stair2.png');
 }
 
 function create ()
@@ -61,8 +63,6 @@ function create ()
     this.cameras.main.setBounds(0, 0, 10000, 1000);
     this.physics.world.setBounds(0, 0, 10000, 1000);
 
-
-
     platforms = this.physics.add.staticGroup();
 
 
@@ -70,10 +70,9 @@ function create ()
 
 
     platforms.create(380,500 , 'stair');
-
-
-
-
+    platforms.create(500,400,'stair2');
+    platforms.create(1100,500 , 'stair');
+    platforms.create(1050,400,'stair2');
 
     player = this.physics.add.sprite(100, 450, 'dude');
     this.cameras.main.startFollow(player, true);
