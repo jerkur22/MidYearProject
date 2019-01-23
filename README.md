@@ -1,6 +1,7 @@
 # Mid-Year Intro to Computer Science Project
 ## WizardRun
-* Basics of Game
+* Basics of the Game
+  * You have just lost the game.
   * You are spawned into a world not knowing where you are and all you know is that you have a wizard hat and can jump high
   * You must avoid the enemies and jump up platforms to reach the end of the level
   * At the end the you must touch the star and you win
