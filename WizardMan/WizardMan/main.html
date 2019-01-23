@@ -48,6 +48,7 @@ var game = new Phaser.Game(config);
 
 function preload ()
 {
+
     this.load.image('sky', 'assets/sky.png');
     this.load.image('ground', 'assets/platform.png');
     this.load.image('star', 'assets/star.png');
@@ -186,11 +187,11 @@ function collectStar (player, star)
         });
 
         var x = (player.x < 1000) ? Phaser.Math.Between(0, 300) : Phaser.Math.Between(0, 200);
-        // var fireball = fireballs.create(x,1,'firebomb');
-        // fireball.setBounce(1);
-        // fireball.setCollideWorldBounds(true);
-        // fireball.setVelocity(Phaser.Math.Between(-200, 200), 20);
-        // fireball.allowGravity = false;
+        var fireball = fireballs.create(x,1,'firebomb');
+        fireball.setBounce(1);
+        fireball.setCollideWorldBounds(true);
+        fireball.setVelocity(Phaser.Math.Between(-200, 200), 20);
+        fireball.allowGravity = false;
         var bomb = bombs.create(x, 1, 'bomb');
         bomb.setBounce(1);
         bomb.setCollideWorldBounds(true);
