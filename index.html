@@ -58,6 +58,7 @@ function preload ()
     this.load.image('grapefruit','assets/stair.png');
     this.load.image('stair2','assets/stair2.png');
     this.load.image('lava','assets/lava.png');
+    this.load.image('winningstar','assests/winningstar.png');
 
 }
 
@@ -80,6 +81,13 @@ function create (){
     platforms.create(1100,500 , 'stair');
     platforms.create(1050,400,'stair2');
     platforms.create(774,518,'lava');
+    platforms.create(1500,500,'stair');
+    platforms.create(1630,400,'stair2');
+    platforms.create(1800,500,'stair');
+    platforms.create(2200,500,'stair');
+
+
+
 
     player = this.physics.add.sprite(100, 450, 'dude');
     this.cameras.main.startFollow(player, true);
@@ -190,7 +198,7 @@ function collectStar (player, star)
 
         var x = (player.x < 1000) ? Phaser.Math.Between(0, 300) : Phaser.Math.Between(0, 200);
 
-        var bomb = bombs.create(x, 1, 'bomb');
+        var bomb = bombs.create(x, 2, 'bomb');
         bomb.setBounce(1);
         bomb.setCollideWorldBounds(true);
         bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
