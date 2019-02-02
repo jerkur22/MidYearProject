@@ -57,6 +57,7 @@ function preload ()
     this.load.image('stair','assets/stair.png');
     this.load.image('grapefruit','assets/stair.png');
     this.load.image('stair2','assets/stair2.png');
+    this.load.image('lava','assets/lava.png');
 
 }
 
@@ -78,6 +79,7 @@ function create (){
     platforms.create(500,400,'stair2');
     platforms.create(1100,500 , 'stair');
     platforms.create(1050,400,'stair2');
+    platforms.create(774,518,'lava');
 
     player = this.physics.add.sprite(100, 450, 'dude');
     this.cameras.main.startFollow(player, true);
