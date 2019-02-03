@@ -35,7 +35,7 @@ var config = {
 var player;
 var stars;
 var bombs;
-var fireballs;
+
 var platforms;
 var cursors;
 var score = 0;
@@ -116,7 +116,7 @@ function create (){
         repeat: -1
     });
 
-    //  Input Events
+
     cursors = this.input.keyboard.createCursorKeys();
 
     stars = this.physics.add.group({
@@ -196,7 +196,7 @@ function collectStar (player, star)
 
         });
 
-        var x = (player.x < 1000) ? Phaser.Math.Between(0, 300) : Phaser.Math.Between(0, 200);
+        var x = (player.x < 2000) ? Phaser.Math.Between(0, 300) : Phaser.Math.Between(0, 200);
 
         var bomb = bombs.create(x, 2, 'bomb');
         bomb.setBounce(1);
