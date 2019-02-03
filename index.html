@@ -52,7 +52,8 @@ function preload ()
     this.load.image('grapefruit','assets/stair.png');
     this.load.image('stair2','assets/stair2.png');
     this.load.image('lava','assets/lava.png');
-    this.load.image('winningstar','assests/winningstar.png');
+    this.load.image('winningstar','assets/winningstar.png');
+    this.load.image('turtle','assets/turtle.png')
 }
 function create (){
     this.add.image(500, 400, 'sky');
@@ -91,10 +92,18 @@ function create (){
         repeat: -1
     });
     cursors = this.input.keyboard.createCursorKeys();
+    winningstar = this.physics.add.group({
+        key:'winningstar',
+        repeat: 0,
+        setXY : {x:2950,y:0,stepX:0}
+    });
     stars = this.physics.add.group({
         key: 'star',
         repeat: 1,
         setXY: { x: 12, y: 0, stepX: 70 }
+    });
+    winningstar.children.iterate(function(child){
+        child.setBounceY(Phaser.Math.FloatBetween(0.4,0.8));
     });
     stars.children.iterate(function (child) {
         child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
@@ -103,6 +112,7 @@ function create (){
     //  The score
     scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#000' });
     this.physics.add.collider(player, platforms);
+    this.physics.add.collider(winningstar,platforms);
     this.physics.add.collider(stars, platforms);
     this.physics.add.collider(bombs, platforms);
     this.physics.add.overlap(player, stars, collectStar, null, this);
