@@ -100,7 +100,7 @@ function create (){
     stars = this.physics.add.group({
         key: 'star',
         repeat: 50,
-        setXY: { x: 12, y: 0, stepX: 112 }
+        setXY: { x: 12, y: 0, stepX: 105 }
     });
     winningstar.children.iterate(function(child){
         child.setBounceY(Phaser.Math.FloatBetween(0.4,0.8));
@@ -155,7 +155,7 @@ function collectStar (player, star)
         stars.children.iterate(function (child) {
             child.enableBody(true, child.x, 0, true, true);
         });
-        var x = (player.x = player.x-100) ? Phaser.Math.Between(0, 300) : Phaser.Math.Between(0, 200); // supposed to be player.x<2000
+        var x = (player.x = player.x-100) ? Phaser.Math.Between(0, 1000) : Phaser.Math.Between(0, 800); // supposed to be player.x<2000
         var bomb = bombs.create(x, 16, 'bomb');
         bomb.setBounce(1);
         bomb.setCollideWorldBounds(true);
