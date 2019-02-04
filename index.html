@@ -5,18 +5,31 @@
     <title>WizardMan</title>
     <script src="phaser.js"></script>
     <style type="text/css">
-        body {
-            margin: 0;
+        /*#bottom {*/
+            /*position: fixed;*/
+            /*bottom:0;*/
+
+        /*}*/
+
+        canvas{
+            /*position: absolute;;*/
+            /*top: 50%;*/
+            /*left: 50%;*/
+            /*transform: translate(-50%,-50%);*/
+            margin: 0 auto;
+            display: block;
         }
     </style>
 </head>
 <body>
-
+<div class="parent">
 <script type="text/javascript">
+
 var config = {
     type: Phaser.AUTO,
     width: 1000,
     height: 800,
+    parent : ".parent",
     physics: {
         default: 'arcade',
         arcade: {
@@ -179,6 +192,14 @@ function hitBomb (player, bomb)
     }
 }
 </script>
+<!--<h2>How to Play WizardMan!</h2>-->
+<!--<ul id="bottom">-->
+    <!--<li>Avoid Stars, Less Stars = Better Score</li>-->
+    <!--<li>Two Stars causes you to move back 100 pixels and a bomb spawns</li>-->
+    <!--<li>Reach the end of the map and touch the winning star to win!</li>-->
+
+<!--</ul>-->
+<!--</div>-->
 
 </body>
 </html>
