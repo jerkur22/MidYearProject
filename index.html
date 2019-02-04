@@ -99,7 +99,7 @@ function create (){
     });
     stars = this.physics.add.group({
         key: 'star',
-        repeat: 1,
+        repeat: 40,
         setXY: { x: 12, y: 0, stepX: 70 }
     });
     winningstar.children.iterate(function(child){
@@ -150,14 +150,14 @@ function collectStar (player, star)
     star.disableBody(true, true);
     score += 10;
     scoreText.setText('Score: ' + score);
-    if (stars.countActive(true) === 0)
+    if (stars.countActive(true) === 39)
     {
         stars.children.iterate(function (child) {
             child.enableBody(true, child.x, 0, true, true);
         });
         var x = (player.x < 2000) ? Phaser.Math.Between(0, 300) : Phaser.Math.Between(0, 200);
-        var bomb = bombs.create(x, 2, 'bomb');
-        bomb.setBounce(1);
+        var bomb = bombs.create(x, 16, 'bomb');
+        bomb.setBounce(1);tM
         bomb.setCollideWorldBounds(true);
         bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
         bomb.allowGravity = false;
