@@ -155,7 +155,7 @@ function collectStar (player, star)
         stars.children.iterate(function (child) {
             child.enableBody(true, child.x, 0, true, true);
         });
-        var x = (player.x = 1000) ? Phaser.Math.Between(0, 300) : Phaser.Math.Between(0, 200); // supposed to be player.x<2000
+        var x = (player.x = 100) ? Phaser.Math.Between(0, 300) : Phaser.Math.Between(0, 200); // supposed to be player.x<2000
         var bomb = bombs.create(x, 16, 'bomb');
         bomb.setBounce(1);
         bomb.setCollideWorldBounds(true);
@@ -166,7 +166,7 @@ function collectStar (player, star)
 function collectWinning(player,winningstar)
 {
     winningstar.disableBody(true,true);
-    alert("You won!")
+    alert("You won! Score of: " + score)
 }
 function hitBomb (player, bomb)
 {
@@ -175,7 +175,7 @@ function hitBomb (player, bomb)
     player.anims.play('turn');
     gameOver = true;
     if (gameOver){
-        alert("You died good job")
+        alert("You died good job. Score of: " + score)
     }
 }
 </script>
