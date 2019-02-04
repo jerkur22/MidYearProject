@@ -155,7 +155,7 @@ function collectStar (player, star)
         stars.children.iterate(function (child) {
             child.enableBody(true, child.x, 0, true, true);
         });
-        var x = (player.x = player.x-100,player.y = player.y-100) ? Phaser.Math.Between(0, 1000) : Phaser.Math.Between(0, 800); // supposed to be player.x<2000
+        var x = (player.x = player.x-100,player.y = player.y-50) ? Phaser.Math.Between(0, 1000) : Phaser.Math.Between(0, 800); // supposed to be player.x<2000
         var bomb = bombs.create(x, 16, 'bomb');
         bomb.setBounce(1);
         bomb.setCollideWorldBounds(true);
